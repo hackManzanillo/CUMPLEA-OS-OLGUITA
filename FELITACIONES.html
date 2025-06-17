@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>Happy Birthday</title>
+<link href="https://fonts.googleapis.com/css?family=Wendy+One" rel="stylesheet" />
+
+<style>
+  body {
+    margin:0;
+    overflow-x: hidden;
+    font-family:'Wendy One', sans-serif;
+    background: radial-gradient(circle, #374566 0%, #010203 100%);
+    position: relative;
+    height: 100vh;
+    color: white;
+  }
+  
+  
+  h1 {
+    text-align: center;
+    font-size: 3.5em;
+    margin-top: 10px;
+    position: relative;
+    z-index: 10;
+  }
+  .container {
+    width: 800px;
+    height: 420px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+  }
+  .balloon {
+    width: 738px;
+    margin: 0 auto;
+    padding-top: 30px;
+    position: relative;
+    z-index: 10;
+  }
+  .balloon > div {
+    width: 104px;
+    height: 140px;
+    border-radius: 80% 80% 80% 80%;
+    margin: 0 auto;
+    position: absolute;
+    padding: 10px;
+    box-shadow: inset 17px 7px 10px rgba(182, 15, 97, 0.9);
+    transform-origin: bottom center;
+  }
+  .balloon > div:nth-child(1) {
+    background: rgba(182, 15, 97, 0.9);
+    left: 0;
+    box-shadow: inset 10px 10px 10px rgba(135, 11, 72, 0.9);
+    animation: balloon1 6s ease-in-out infinite;
+  }
+  .balloon > div:nth-child(2) {
+    background: rgba(242, 112, 45, 0.9);
+    left: 120px;
+    box-shadow: inset 10px 10px 10px rgba(222, 85, 14, 0.9);
+    animation: balloon2 6s ease-in-out infinite;
+  }
+  .balloon > div:nth-child(3) {
+    background: rgba(45, 181, 167, 0.9);
+    left: 240px;
+    box-shadow: inset 10px 10px 10px rgba(35, 140, 129, 0.9);
+    animation: balloon4 6s ease-in-out infinite;
+  }
+  .balloon > div:nth-child(4) {
+    background: rgba(190, 61, 244, 0.9);
+    left: 360px;
+    box-shadow: inset 10px 10px 10px rgba(173, 14, 240, 0.9);
+    animation: balloon1 5s ease-in-out infinite;
+  }
+  .balloon > div:nth-child(5) {
+    background: rgba(180, 224, 67, 0.9);
+    left: 480px;
+    box-shadow: inset 10px 10px 10px rgba(158, 206, 34, 0.9);
+    animation: balloon3 5s ease-in-out infinite;
+  }
+  .balloon > div:nth-child(6) {
+    background: rgba(242, 194, 58, 0.9);
+    left: 600px;
+    box-shadow: inset 10px 10px 10px rgba(234, 177, 15, 0.9);
+    animation: balloon2 3s ease-in-out infinite;
+  }
+
+    .balloon > div:nth-child(7) {
+    background: rgba(255, 105, 180, 0.9); /* rosa fuerte */
+    left: 720px;
+    box-shadow: inset 10px 10px 10px rgba(200, 50, 130, 0.9);
+    animation: balloon4 6s ease-in-out infinite;
+  }
+
+  .balloon > div > span {
+    font-size: 4.8em;
+    color: white;
+    position: relative;
+    top: 30px;
+    left: 50%;
+    margin-left: -27px;
+  }
+  .balloon > div:before {
+    content: "▲";
+    position: absolute;
+    bottom: -11px;
+    left: 52px;
+    font-size: 1em;
+    color: inherit;
+  }
+
+  /* Animations */
+  @keyframes balloon1 {
+    0%, 100% { transform: translateY(0) rotate(-6deg); }
+    50% { transform: translateY(-20px) rotate(8deg); }
+  }
+  @keyframes balloon2 {
+    0%, 100% { transform: translateY(0) rotate(6deg); }
+    50% { transform: translateY(-30px) rotate(-8deg); }
+  }
+  @keyframes balloon3 {
+    0%, 100% { transform: translate(0, -10px) rotate(6deg); }
+    50% { transform: translate(-20px, 30px) rotate(-8deg); }
+  }
+  @keyframes balloon4 {
+    0%, 100% { transform: translate(10px, -10px) rotate(-8deg); }
+    50% { transform: translate(-15px, 10px) rotate(10deg); }
+  }
+  @import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC');
+
+body {
+	font-family: 'Indie Flower', cursive !important;
+	margin: 0px;
+	padding: 0px;
+}
+
+::selection {
+	background: transparent;
+}
+
+h4 {
+	font-size: 26px;
+	line-height: 1px;
+	font-family: 'Amatic SC', cursive !important;
+}
+
+.color1{color:#1BBC9B}
+.color2{color:#C0392B}
+
+
+.card {
+	color: #013243;
+	position: absolute;
+	top: 50%;
+	left: 15%;
+	width: 300px;
+	height: 400px;
+	background: #e0e1dc;
+	transform-style: preserve-3d;
+	transform: translate(-15%,-50%) perspective(2000px);
+	box-shadow: inset 300px 0 50px rgba(0,0,0,.5), 20px 0 60px rgba(0,0,0,.5);
+	transition: 1s;
+}
+
+.card:hover {
+	transform: translate(-50%,-50%) perspective(2000px) rotate(15deg) scale(1.2);
+	box-shadow: inset 20px 0 50px rgba(0,0,0,.5), 0 10px 100px rgba(0,0,0,.5);
+}
+
+.card:before {
+	content:'';
+	position: absolute;
+	top: -5px;
+	left: 0;
+	width: 100%;
+	height: 5px;
+	background: #BAC1BA;
+	transform-origin: bottom;
+	transform: skewX(-45deg);
+}
+
+.card:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: -5px;
+	width: 5px;
+	height: 100%;
+	background: #92A29C;
+	transform-origin: left;
+	transform: skewY(-45deg);
+}
+
+.card .imgBox {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	transform-origin: left;
+	transition: .7s;
+}
+
+.card .bark {
+	position: absolute;
+	background: #e0e1dc;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	transition: .7s;
+}
+
+.card .imgBox img {
+	min-width: 250px;
+	max-height: 400px;
+}
+
+.card:hover .imgBox {
+	transform: rotateY(-135deg);
+}
+
+.card:hover .bark {
+	opacity: 1;
+	transition: .6s;
+  box-shadow: 300px 200px 100px rgba(0, 0, 0, .4) inset;
+}
+
+.card .details {
+	position: absolute;
+	top: 0;
+	left: 0;
+	box-sizing: border-box;
+	padding: 0 0 0 10px;
+	z-index: -1;
+	margin-top: 70px;
+}
+
+.card .details p {
+	font-size: 15px;
+	line-height: 5px;
+	transform: rotate(-10deg);
+	padding: 0 0 0 20px;
+}
+
+.card .details h4 {
+	text-align: center;
+}
+
+.text-right {
+	text-align: right;
+}
+
+  /* Caja regalo para activar animación */
+  #gift-box {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 140px;
+    height: 140px;
+    background: linear-gradient(45deg, #e33 0%, #b22 100%);
+    border-radius: 15px;
+    cursor: pointer;
+    box-shadow: 0 0 15px #f55 inset;
+    z-index: 15;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.3em;
+    user-select: none;
+  }
+  #gift-box:hover {
+    background: linear-gradient(45deg, #f55 0%, #d33 100%);
+  }
+
+  /* Video estilo */
+  #video-container {
+    position: fixed;
+    bottom: 180px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 320px;
+    height: 180px;
+    display: none;
+    border: 4px solid white;
+    border-radius: 15px;
+    overflow: hidden;
+    z-index: 20;
+  }
+  #video-container video {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+  }
+
+  /* Canvas fuegos artificiales */
+  #fireworks-canvas {
+    position: fixed;
+    top:0; left:0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 12;
+  }
+</style>
+</head>
+<body>
+
+  <h1>FELIZ CUMPLEAÑOS A LA MEJOR JEFA DEL MUNDO</h1>
+  <h1>(TORRE DE CONTROL)</h1>
+  <div class="container">
+    <div class="balloon">
+      <div><span>O</span></div>
+      <div><span>L</span></div>
+      <div><span>G</span></div>
+      <div><span>U</span></div>
+      <div><span>I</span></div>   
+      <div><span>T</span></div>
+      <div><span>A</span></div>
+    </div>
+  </div>
+
+  <div class="card">
+		<div class="imgBox">
+			<div class="bark"></div>
+			<img src="https://image.ibb.co/fYzTrb/lastofus.jpg">
+		</div>
+		<div class="details">
+			<h4 class="color3">FELIZ CUMPLEAÑOS</h2>
+			<!--h4 class="color2 margin"></h3> -->
+			<p></p>Que siga cumpliendo mas años para que siga revalidando BL´S y recuperando garantias para AltaCargo.Usted es muy buena maestra y persona, le agradezco por enseñarme en esta nueva area aunque sea muy peleonera =) 
+		</div>
+	</div>
+
+  <canvas id="fireworks-canvas"></canvas>
+
+  <div id="gift-box" title="Haz clic para celebrar 🎉">🎁 ¡Abrir! 🎁</div>
+
+  <div id="video-container">
+    <video id="birthday-video" src="videoCumpleaños.mp4" controls></video>
+  </div>
+
+<script>
+  // Fuegos artificiales simples con canvas
+  const canvas = document.getElementById('fireworks-canvas');
+  const ctx = canvas.getContext('2d');
+  let cw, ch;
+  let fireworks = [];
+  let particles = [];
+  let isRunning = false;
+
+  function resize() {
+    cw = window.innerWidth;
+    ch = window.innerHeight;
+    canvas.width = cw;
+    canvas.height = ch;
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  
+  class Firework {
+    constructor(sx, sy, tx, ty) {
+      this.x = sx;
+      this.y = sy;
+      this.sx = sx;
+      this.sy = sy;
+      this.tx = tx;
+      this.ty = ty;
+      this.distanceToTarget = dist(sx, sy, tx, ty);
+      this.distanceTraveled = 0;
+      this.coordinates = [];
+      this.coordinateCount = 3;
+      while(this.coordinateCount--) {
+        this.coordinates.push([this.x, this.y]);
+      }
+      this.angle = Math.atan2(ty - sy, tx - sx);
+      this.speed = 4;
+      this.acceleration = 1.05;
+      this.brightness = random(50, 70);
+      this.targetRadius = 8;
+    }
+    update(index) {
+      this.coordinates.pop();
+      this.coordinates.unshift([this.x, this.y]);
+      if(this.targetRadius < 8) {
+        this.targetRadius += 0.3;
+      } else {
+        this.targetRadius = 1;
+      }
+      this.speed *= this.acceleration;
+      let vx = Math.cos(this.angle) * this.speed;
+      let vy = Math.sin(this.angle) * this.speed;
+      this.distanceTraveled = dist(this.sx, this.sy, this.x + vx, this.y + vy);
+      if(this.distanceTraveled >= this.distanceToTarget) {
+        createParticles(this.tx, this.ty);
+        fireworks.splice(index, 1);
+      } else {
+        this.x += vx;
+        this.y += vy;
+      }
+    }
+    draw() {
+      ctx.beginPath();
+      ctx.moveTo(this.coordinates[this.coordinates.length-1][0], this.coordinates[this.coordinates.length-1][1]);
+      ctx.lineTo(this.x, this.y);
+      ctx.strokeStyle = `hsl(${random(0,360)}, 100%, ${this.brightness}%)`;
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.arc(this.tx, this.ty, this.targetRadius, 0, Math.PI*2);
+      ctx.stroke();
+    }
+  }
+
+  class Particle {
+    constructor(x,y) {
+      this.x = x;
+      this.y = y;
+      this.coordinates = [];
+      this.coordinateCount = 5;
+      while(this.coordinateCount--) {
+        this.coordinates.push([this.x, this.y]);
+      }
+      this.angle = random(0, Math.PI*2);
+      this.speed = random(1, 10);
+      this.friction = 0.95;
+      this.gravity = 0.7;
+      this.hue = random(0, 360);
+      this.brightness = random(50, 80);
+      this.alpha = 1;
+      this.decay = random(0.015, 0.03);
+    }
+    update(index) {
+      this.coordinates.pop();
+      this.coordinates.unshift([this.x, this.y]);
+      this.speed *= this.friction;
+      this.x += Math.cos(this.angle) * this.speed;
+      this.y += Math.sin(this.angle) * this.speed + this.gravity;
+      this.alpha -= this.decay;
+      if(this.alpha <= 0) {
+        particles.splice(index, 1);
+      }
+    }
+    draw() {
+      ctx.beginPath();
+      ctx.moveTo(this.coordinates[this.coordinates.length-1][0], this.coordinates[this.coordinates.length-1][1]);
+      ctx.lineTo(this.x, this.y);
+      ctx.strokeStyle = `hsla(${this.hue}, 100%, ${this.brightness}%, ${this.alpha})`;
+      ctx.stroke();
+    }
+  }
+
+  function createParticles(x,y) {
+    let particleCount = 30;
+    while(particleCount--) {
+      particles.push(new Particle(x,y));
+    }
+  }
+
+  function dist(a,b,c,d) {
+    return Math.sqrt((c - a)**2 + (d - b)**2);
+  }
+  function random(min,max) {
+    return Math.random()*(max-min) + min;
+  }
+
+  function loop() {
+    requestAnimationFrame(loop);
+    ctx.globalCompositeOperation = 'destination-out';
+    ctx.fillStyle = 'rgba(0,0,0,0.3)';
+    ctx.fillRect(0, 0, cw, ch);
+    ctx.globalCompositeOperation = 'lighter';
+
+    for(let i = fireworks.length-1; i >= 0; i--) {
+      fireworks[i].draw();
+      fireworks[i].update(i);
+    }
+    for(let i = particles.length-1; i >= 0; i--) {
+      particles[i].draw();
+      particles[i].update(i);
+    }
+
+    if(!isRunning && fireworks.length === 0 && particles.length === 0) {
+      // stop anim loop if no fireworks active
+      return;
+    }
+  }
+
+  function launchFirework() {
+    let startX = cw/2;
+    let startY = ch;
+    let targetX = random(100, cw-100);
+    let targetY = random(50, ch/2);
+    fireworks.push(new Firework(startX, startY, targetX, targetY));
+  }
+
+  // Control del botón para activar animación y video
+  const giftBox = document.getElementById('gift-box');
+  const videoContainer = document.getElementById('video-container');
+  const video = document.getElementById('birthday-video');
+
+  let fireworksInterval;
+
+  giftBox.addEventListener('click', () => {
+    if(isRunning) return; // ya está activo
+
+    isRunning = true;
+    // Mostrar video
+    videoContainer.style.display = 'block';
+    video.play();
+
+    // Lanzar fuegos artificiales periódicamente
+    fireworksInterval = setInterval(() => {
+      launchFirework();
+    }, 400);
+
+    // Anim loop
+    loop();
+
+  });
+
+</script>
+</body>
+</html>
+

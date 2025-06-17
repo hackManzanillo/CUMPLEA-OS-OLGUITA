@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>¡Sorpresa!</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      overflow: hidden;
+      background-color: #e0f7fa;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    h1 {
+      font-size: 64px;
+      color: #ff4081;
+      text-align: center;
+      margin-bottom: 100px;
+      animation: sorpresa 1s ease-in-out;
+    }
+
+    @keyframes sorpresa {
+      0% { transform: scale(0.5); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    #botones {
+      position: relative;
+      width: 100%;
+      height: 200px;
+    }
+
+    button {
+      position: absolute;
+      padding: 14px 24px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    #botonNormal {
+      left: 40%;
+      top: 60px;
+      background-color: #4caf50;
+      color: white;
+    }
+
+    #botonEscapista {
+      left: 60%;
+      top: 60px;
+      background-color: #f44336;
+      color: white;
+      transition: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>¿QUIÉN ERES?</h1>
+
+  <div id="botones">
+    <button id="botonNormal" onclick="window.location.href='FELITACIONES.html'">OLGA</button>
+    <button id="botonEscapista">LORENA</button>
+  </div>
+
+  <script>
+    const botonEscapista = document.getElementById('botonEscapista');
+    const velocidad = 10;
+    const umbralDistancia = 150;
+
+    document.addEventListener('mousemove', (e) => {
+      const rect = botonEscapista.getBoundingClientRect();
+      const botonX = rect.left + rect.width / 2;
+      const botonY = rect.top + rect.height / 2;
+
+      const dx = e.clientX - botonX;
+      const dy = e.clientY - botonY;
+      const distancia = Math.sqrt(dx * dx + dy * dy);
+
+      if (distancia < umbralDistancia) {
+        const direccionX = dx / distancia;
+        const direccionY = dy / distancia;
+
+        let nuevaX = botonEscapista.offsetLeft - direccionX * velocidad * 10;
+        let nuevaY = botonEscapista.offsetTop - direccionY * velocidad * 10;
+
+        const contenedor = document.getElementById('botones');
+        const maxX = contenedor.offsetWidth - botonEscapista.offsetWidth;
+        const maxY = contenedor.offsetHeight - botonEscapista.offsetHeight;
+
+        // Rebote aleatorio si se pega a los bordes
+        if (nuevaX <= 0 || nuevaX >= maxX) {
+          nuevaX = Math.random() * maxX;
+        }
+        if (nuevaY <= 0 || nuevaY >= maxY) {
+          nuevaY = Math.random() * maxY;
+        }
+
+        nuevaX = Math.max(0, Math.min(maxX, nuevaX));
+        nuevaY = Math.max(0, Math.min(maxY, nuevaY));
+
+        botonEscapista.style.left = nuevaX + 'px';
+        botonEscapista.style.top = nuevaY + 'px';
+      }
+    });
+  </script>
+</body>
+</html>
+
